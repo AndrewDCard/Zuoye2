@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="work.css">
+</head>
+
+<body>
+    <div id="wrap1">
+        <div>
+            <广告>
+        </div>
+    </div>
+    <div id="wrap2">
+        <ul>
+            <li></li>
+            <li>Mac</li>
+            <li>iPad</li>
+            <li>iPhone</li>
+            <li>Watch</li>
+            <li>Music</li>
+            <li>技术支持 </li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="wrap4">
+        <p id="wrap4-p1">iPhone 12</p>
+        <p>升维大加速</p>
+        <p>RMB 229/月或RMB 5499起,</p>
+        <p>还可折抵换购1。</p>
+        <ul>
+            <li><a href="">进一步了解></a></li>
+            <li><a href="">购买></a></li>
+        </ul>
+        <div></div>
+    </div>
+    <div id="wrap5">
+        <div>
+            <p id="wrap5-p1">iPhone 12 Pro</p>
+            <p>升维大加速</p>
+            <p>RMB 354/月或RMB 8499起,</p>
+            <p>还可折抵换购1。</p>
+            <ul>
+                <li><a href="">进一步了解></a></li>
+                <li><a href="">购买></a></li>
+            </ul>
+            <div id="wrap5-box1"><img src="img/apple2.png" alt=""></div>
+        </div>
+    </div>
+    <div id="wrap6">
+        <div>
+            <p>iPad Air</p>
+            <p>凭实力出彩</p>
+            <ul>
+                <li><a href="">进一步了解></a></li>
+                <li><a href="">购买></a></li>
+            </ul>
+            <div id="wrap6-box1"></div>
+        </div>
+    </div>
+    <div id="wrap7">
+        <ul id="wrap7-ul1">
+            <li><img src="img//apple4.png" alt=""></li>
+            <li><img src="img//apple4.png" alt=""></li>
+        </ul>
+        <ul id="wrap7-ul2">
+            <li><img src="img//apple4.png" alt=""></li>
+            <li><img src="img/apple5.png" alt=""></li>
+        </ul>
+        <ul id="wrap7-ul3">
+            <li><img src="img/apple6.png" alt=""></li>
+            <li><img src="img/apple7.png" alt=""></li>
+        </ul>
+    </div>
+    <div id="wrap8">
+        <img src="img/屏幕1.png" alt="">
+        <img src="img/屏幕2.png" alt="">
+        <img src="kimg/屏幕3.png" alt="">
+        <img src="img/屏幕4.png" alt="">
+        <img src="img/屏幕5.png" alt="">
+    </div>
+    <div id="wrap9">
+        <img src="img/apple8.png">
+    </div>
+    <div id="bac1">
+        <ul id="bac1-ul">
+            <li>iPhone 12</li>
+            <li>iPhone 12 Pro</li>
+            <li>iPad Air</li>
+            <li>cilent</li>
+        </ul>
+        <div id="bac1-box1"><img src="img/work箭头.png" alt=""></div>
+    </div>
+</body>
+<script>
+    var bac1box1 = document.querySelector('#bac1-box1');
+    var back1 = document.getElementById('bac1');
+    var boo = 0;
+    bac1box1.addEventListener('click', function() {
+        if (boo == 0) {
+            back1.style.left = '0px';
+            boo = 1;
+            bac1box1.style.transform = 'rotateZ(180deg)';
+        } else {
+            back1.style.left = '-104px';
+            boo = 0;
+            bac1box1.style.transform = 'rotateZ(0deg)';
+        }
+    })
+    var bac1ul = document.querySelector('#bac1-ul');
+    var bac1ulli = bac1ul.querySelectorAll('li');
+    var i = 0;
+    for (i = 0; i < bac1ulli.length; i++) {
+        (function(i) {
+            bac1ulli[i].addEventListener('click', function() {
+                if (i == 0)
+                    window.scrollTo(0, 0);
+                else if (i == 1)
+                    window.scrollTo(0, 550);
+                else if (i == 2)
+                    window.scrollTo(0, 1160);
+                else if (i == 3)
+                    window.scrollTo(0, 1790);
+            })
+        })(i)
+    }
+
+    var wrap5p1 = document.getElementById('wrap5-p1');
+    var wrap4p1 = document.getElementById('wrap4-p1');
+    var wrap5box1 = document.getElementById('wrap5-box1');
+    var wrap7ul1 = document.getElementById('wrap7-ul1');
+    var wrap7ul2 = document.getElementById('wrap7-ul2');
+    var wrap7ul3 = document.getElementById('wrap7-ul3');
+    var wrap8 = document.querySelector('#wrap8');
+    var wrap81 = document.getElementById('wrap8');
+    var wrap8img = wrap8.querySelectorAll('img');
+    var nn = 0;
+    document.onscroll = function() {
+        var t = document.body.scrollTop + document.documentElement.scrollTop;
+        if (t > 200) {
+            wrap5p1.style.opacity = 1;
+            wrap5p1.style.marginLeft = 0;
+        }
+        if (t > 410) {
+            wrap5box1.style.marginLeft = 0;
+            wrap5box1.style.opacity = 1;
+        }
+        if (t > 1550) {
+            wrap7ul1.style.opacity = 1;
+            wrap7ul1.style.top = 0;
+        }
+        if (t > 2150) {
+            wrap7ul2.style.top = 0;
+            wrap7ul2.style.opacity = 1;
+        }
+        if (t > 3680 && nn == 0) {
+            nn = 1;
+            var wid = (wrap81.offsetWidth - 5 * wrap8img[0].offsetWidth) / 6;
+            wrap8img.forEach((e, i) => {
+                e.style.left = wid * (i + 1) + wrap8img[0].offsetWidth * i + 'px';
+            });
+        }
+        console.log(t);
+    }
+</script>
+
+</html>
